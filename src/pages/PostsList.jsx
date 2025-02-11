@@ -1,3 +1,10 @@
+import Header from "../components/Header";
+
 export default function PostsList() {
-  return <h1>Lista dei post</h1>;
+  return (
+    <>
+      <Header />
+      <h1>Lista dei post</h1>
+    </>
+  );
 }
