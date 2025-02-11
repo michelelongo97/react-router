@@ -5,13 +5,17 @@ import AboutUs from "./pages/AboutUs";
 import PostsList from "./pages/PostsList";
 import PageNotFound from "./pages/PageNotFound";
 
+import DefaultLayout from "./layouts/defaultLayout";
+
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/posts-list" element={<PostsList />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route element={<DefaultLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/posts-list" element={<PostsList />} />
+          <Route path="/about-us" element={<AboutUs />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
